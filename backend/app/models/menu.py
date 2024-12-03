@@ -2,7 +2,7 @@ from datetime import date
 from dataclasses import dataclass, field
 from typing import List
 from bson import ObjectId
-from models import Recipe
+from models.recipe import Recipe
 
 @dataclass
 class Menu:

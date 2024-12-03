@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from typing import List
 
 from bson import ObjectId
-from models import Ingredient
+from models.ingredient import Ingredient
 
 
 

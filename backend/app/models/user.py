@@ -26,18 +26,18 @@ class User:
             ValueError: If any attribute is invalid.
         '''
         # Validate email format
-        if not re.match(r"[^@]+@[^@]+\.[^@]+", self.user_email):
-            raise ValueError("Invalid email format.")
+        if not re.match(r'[^@]+@[^@]+\.[^@]+', self.user_email):
+            raise ValueError('Invalid email format.')
         
         # Validate password strength
         if len(self.user_password) < 8:
-            raise ValueError("Password must be at least 8 characters long.")
+            raise ValueError('Password must be at least 8 characters long.')
         
         if not any(char.isdigit() for char in self.user_password):
-            raise ValueError("Password must contain at least one number.")
+            raise ValueError('Password must contain at least one number.')
         
         if not any(char.isalpha() for char in self.user_password):
-            raise ValueError("Password must contain at least one letter.")
+            raise ValueError('Password must contain at least one letter.')
 
     def hash_password(self) -> None:
         '''
