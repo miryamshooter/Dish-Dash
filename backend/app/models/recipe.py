@@ -8,6 +8,7 @@ from app.models.ingredient import Ingredient
 class Recipe:
     '''
     This class represents a recipe.
+    
     Attributes:
         user_id (ObjectId): The user who created the recipe.
         title (string): The title of the recipe.

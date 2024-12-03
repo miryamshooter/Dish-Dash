@@ -1,6 +1,7 @@
 import unittest
 from app.models.user import User
 
+
 class TestUserModel(unittest.TestCase):
     def setUp(self) -> None:
         '''
@@ -90,6 +91,7 @@ class TestUserModel(unittest.TestCase):
         self.assertEqual(user_dict['user_email'], 'user@example.com')
         self.assertEqual(user_dict['user_name'], 'User Example')
         self.assertNotIn('user_password', user_dict)
+
 
 if __name__ == '__main__':
     unittest.main()
