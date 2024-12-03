@@ -1,9 +1,7 @@
 from dataclasses import dataclass, field
 from typing import List
-
 from bson import ObjectId
-from models.ingredient import Ingredient
-
+from app.models.ingredient import Ingredient
 
 
 @dataclass
