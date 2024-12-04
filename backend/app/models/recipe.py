@@ -8,7 +8,7 @@ from app.models.ingredient import Ingredient
 class Recipe:
     '''
     This class represents a recipe.
-    
+
     Attributes:
         user_id (ObjectId): The user who created the recipe.
         title (string): The title of the recipe.
@@ -20,10 +20,10 @@ class Recipe:
     '''
     user_id: ObjectId
     title: str
-    description: str
+    description: str = ''
     ingredients: List[Ingredient] = field(default_factory=list)
     steps: List[str] = field(default_factory=list)
-    prep_time: int = 0
+    prep_time: str = ''
     category: str = 'unknown'
 
     def validate(self) -> None:
@@ -37,8 +37,6 @@ class Recipe:
             raise ValueError(f'Invalid ObjectId: {self.user_id}')
         if not self.title:
             raise ValueError('Title cannot be empty.')
-        if not isinstance(self.prep_time, int) or self.prep_time < 0:
-            raise ValueError('Preparation time must be a non-negative integer.')
         if self.category not in {'dairy', 'meat', 'parve', 'unknown'}:
             raise ValueError(f'Invalid category: {self.category}')
         if not self.ingredients:
